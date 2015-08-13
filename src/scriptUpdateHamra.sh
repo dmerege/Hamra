@@ -1,19 +1,24 @@
 #!/bin/bash
 
-wget https://www.dropbox.com/s/xg7t8pbsao07gga/psnTopology.py
+rm psnTopology.py
+
+cd Hamra
+git pull
+cd ..
 
 cd pyretic
-
 rm hamraGTR.py
 rm hamraGTR.pyc
 rm hamraConfig.py
 rm hamraConfig.pyc
 rm psnTopology.py
 rm psnTopology.pyc
+cd ..
 
 
-wget https://www.dropbox.com/s/ctnftyi7hsfmho1/hamraGTR.py 
-wget https://www.dropbox.com/s/413qp9ovpv4xsjx/hamraConfig.py
+cp ~/Hamra/hamraGTR.py ~/pyretic/hamraGTR.py
+cp ~/Hamra/hamraConfig.py ~/pyretic/hamraConfig.py
+cp ~/Hamra/psnTopology.py psnTopology.py
 
 
 
