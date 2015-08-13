@@ -31,11 +31,13 @@ class NetworkTrafficManager (DynamicPolicy):
         self.elapsedTimeInit = 0
         self.elapsedTimeSetState = 0
         self.elapsedTimeUpdatePolicy = 0
+        self.simulationId = 1
                     
         print "Initializing HAMRA Network Traffic Manager" 
         print "Welcome to HAMRA Network Traffic Management - Version 1.5"
         print "Developed by Daniel Merege - 2015"
         print "\n"
+        
         self.currentState = "None"
         self.activeFlows = {} #List to store the active flows in the current state
         super(NetworkTrafficManager,self).__init__(true)
@@ -86,8 +88,11 @@ class NetworkTrafficManager (DynamicPolicy):
         self.elapsedTimeUpdatePolicy = self.endTime - self.startTime #Calculate elapsed time of the function
         
 
-    #Print Elapsed Times
-    def printTimes(self):
+    #Save Elapsed Times into Results.txt
+    def saveTimes(self):
+        file = open('~/Hamra/Simulations/results.txt','w')
+        file.writelines(self.simulationId,';',self.currentState,';',self.elapsedTimeInit,';',self.elapsedTimeSetState,';',self.elapsedTimeUpdatePolicy)
+        file.close()
         print "Init Time: ", self.elapsedTimeInit, "\n"
         print "Set State Time: ", self.elapsedTimeSetState, "\n"
         print "Update Policy Time: ", self.elapsedTimeUpdatePolicy, "\n"
@@ -101,6 +106,11 @@ class NetworkTrafficManager (DynamicPolicy):
             print '\n'
             print hamraConfig.emergencyStatesNames.items()
             print '\n'
+            
+            # Simulation File Initialization
+            file = open('~/Hamra/Simulations/results.txt','w')
+            file.writelines('Simulation_Id;State;Init_Time;SetState_Time;Update_Time')
+            file.close()
                 
             command = raw_input('Type the first letter of your option, or (q) to Quit Hamra:\n\n')
 
@@ -113,7 +123,7 @@ class NetworkTrafficManager (DynamicPolicy):
             else:
                 print "Invalid Option. Try Again. \n"
             
-            self.printTimes()
+            self.saveTimes() #Save Elapsed Times into Results File - Simulation
         
 def main():
     return NetworkTrafficManager() >> flood()
