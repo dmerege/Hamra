@@ -33,6 +33,7 @@ class NetworkTrafficManager (DynamicPolicy):
         self.elapsedTimeUpdatePolicy = 0
         self.simulationId = 1
                     
+        print "\n"
         print "Initializing HAMRA Network Traffic Manager" 
         print "Welcome to HAMRA Network Traffic Management - Version 1.5"
         print "Developed by Daniel Merege - 2015"
@@ -91,7 +92,7 @@ class NetworkTrafficManager (DynamicPolicy):
     #Save Elapsed Times into Results.txt
     def saveTimes(self):
         file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
-        file.writelines(str(self.simulationId) + ';' + self.currentState + ';' + str(self.elapsedTimeInit) + ';' + str(self.elapsedTimeSetState) + ';' + str(self.elapsedTimeUpdatePolicy))
+        file.writelines(self.simulationId + ';' + self.currentState + ';' + self.elapsedTimeInit + ';' + self.elapsedTimeSetState + ';' + self.elapsedTimeUpdatePolicy)
         file.close()
         print "Init Time: ", self.elapsedTimeInit, "\n"
         print "Set State Time: ", self.elapsedTimeSetState, "\n"
@@ -108,9 +109,9 @@ class NetworkTrafficManager (DynamicPolicy):
             print '\n'
             
             # Simulation File Initialization
-            file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
-            file.writelines('Simulation_Id;State;Init_Time;SetState_Time;Update_Time')
-            file.close()
+            # file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
+            # file.writelines('Simulation_Id;State;Init_Time;SetState_Time;Update_Time')
+            # file.close()
                 
             command = raw_input('Type the first letter of your option, or (q) to Quit Hamra:\n\n')
 
