@@ -90,7 +90,7 @@ class NetworkTrafficManager (DynamicPolicy):
 
     #Save Elapsed Times into Results.txt
     def saveTimes(self):
-        file = open('~/Hamra/Simulations/results.txt','w')
+        file = open('~/Hamra/src/Simulations/results.txt','w')
         file.writelines(self.simulationId,';',self.currentState,';',self.elapsedTimeInit,';',self.elapsedTimeSetState,';',self.elapsedTimeUpdatePolicy)
         file.close()
         print "Init Time: ", self.elapsedTimeInit, "\n"
@@ -108,7 +108,7 @@ class NetworkTrafficManager (DynamicPolicy):
             print '\n'
             
             # Simulation File Initialization
-            file = open('~/Hamra/Simulations/results.txt','w')
+            file = open('~/Hamra/src/Simulations/results.txt','w')
             file.writelines('Simulation_Id;State;Init_Time;SetState_Time;Update_Time')
             file.close()
                 
