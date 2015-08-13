@@ -110,9 +110,9 @@ class NetworkTrafficManager (DynamicPolicy):
             print '\n'
             
             # Simulation File Initialization
-            file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
-            file.writelines('Simulation_Id;State;Init_Time;SetState_Time;Update_Time')
-            file.close()
+            #file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
+            #file.writelines('Simulation_Id;State;Init_Time;SetState_Time;Update_Time')
+            #file.close()
                 
             command = raw_input('Type the first letter of your option, or (q) to Quit Hamra:\n\n')
 
