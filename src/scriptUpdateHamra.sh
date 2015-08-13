@@ -16,9 +16,9 @@ rm psnTopology.pyc
 cd ..
 
 
-cp ~/Hamra/hamraGTR.py ~/pyretic/hamraGTR.py
-cp ~/Hamra/hamraConfig.py ~/pyretic/hamraConfig.py
-cp ~/Hamra/psnTopology.py psnTopology.py
+cp ~/Hamra/src/hamraGTR.py ~/pyretic/hamraGTR.py
+cp ~/Hamra/src/hamraConfig.py ~/pyretic/hamraConfig.py
+cp ~/Hamra/src/psnTopology.py psnTopology.py
 
 
 
