@@ -93,7 +93,7 @@ class NetworkTrafficManager (DynamicPolicy):
     def saveTimes(self):
         file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
         #file.writelines(self.simulationId + ';' + self.currentState + ';' + self.elapsedTimeInit + ';' + self.elapsedTimeSetState + ';' + self.elapsedTimeUpdatePolicy)
-        file.writeLines('1;warning;122;123;132')
+        file.writelines('Simulation_Id;State;Init_Time;SetState_Time;Update_Time')
         file.close()
         print "Init Time: ", self.elapsedTimeInit, "\n"
         print "Set State Time: ", self.elapsedTimeSetState, "\n"
