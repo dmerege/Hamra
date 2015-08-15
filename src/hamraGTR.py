@@ -91,7 +91,7 @@ class NetworkTrafficManager (DynamicPolicy):
 
     #Save Elapsed Times into Results.txt
     def saveTimes(self):
-        self.file.writelines(self.simulationId + ';' + self.currentState + ';' + self.elapsedTimeInit + ';' + self.elapsedTimeSetState + ';' + self.elapsedTimeUpdatePolicy + '\n')
+        self.file.write(str(self.simulationId) + ';' + self.currentState + ';' + str(self.elapsedTimeInit) + ';' + str(self.elapsedTimeSetState) + ';' + str(self.elapsedTimeUpdatePolicy) + '\n')
         print "Init Time: ", self.elapsedTimeInit, "\n"
         print "Set State Time: ", self.elapsedTimeSetState, "\n"
         print "Update Policy Time: ", self.elapsedTimeUpdatePolicy, "\n"
