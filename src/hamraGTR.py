@@ -87,10 +87,33 @@ class NetworkTrafficManager (DynamicPolicy):
              
         self.endTime = time.time() #Register End Time of the function
         self.elapsedTimeUpdatePolicy = self.endTime - self.startTime #Calculate elapsed time of the function
-                
+        
+    
+    #Save Elapsed Times into Results.txt   
+    
+    def saveSimulation(self):
+        
+        self.file.write(str(self.simulationId))
+        self.file.write(';') 
+        self.file.write(self.currentState)
+        self.file.write(';')
+        self.file.write(str(self.elapsedTimeInit))
+        self.file.write(';')
+        self.file.write(str(self.elapsedTimeSetState))
+        self.file.write(';')
+        self.file.write(str(self.elapsedTimeUpdatePolicy))
+        self.file.write('\n')
+        
+        self.simulationId = self.simulationId + 1
+              
     #Initialize Network
     def NTM_ui(self):
         
+        #Save Elapsed Times into Results.txt
+        self.file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
+        self.file.write('HAMRA Simulation 1.5\n')
+        self.file.write('Simulation_Id;State;Init_Time;SetState_Time;Update_Time\n')
+       
         #Ask the Network Configuration
         while(True):
             print 'Available Network States\n'
@@ -102,6 +125,7 @@ class NetworkTrafficManager (DynamicPolicy):
 
             if  hamraConfig.emergencyStates.has_key(command):
                 self.setState(command)
+                self.saveSimulation()
             elif command == 'q':
                 print "Quitting HAMRA"
                 os.kill(os.getpid(), signal.SIGINT)
@@ -109,27 +133,12 @@ class NetworkTrafficManager (DynamicPolicy):
             else:
                 print "Invalid Option. Try Again. \n"
                 
-            #Save Elapsed Times into Results.txt
-            self.file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
-            self.file.write('HAMRA Simulation 1.5\n')
-            self.file.write('Simulation_Id;State;Init_Time;SetState_Time;Update_Time\n')
-            self.file.write(str(self.simulationId))
-            self.file.write(';') 
-            self.file.write(self.currentState)
-            self.file.write(';')
-            self.file.write(str(self.elapsedTimeInit))
-            self.file.write(';')
-            self.file.write(str(self.elapsedTimeSetState))
-            self.file.write(';')
-            self.file.write(str(self.elapsedTimeUpdatePolicy))
-            self.file.write('\n')
-            self.file.close() 
-            
             print "Init Time: ", self.elapsedTimeInit, "\n"
             print "Set State Time: ", self.elapsedTimeSetState, "\n"
             print "Update Policy Time: ", self.elapsedTimeUpdatePolicy, "\n"
-
-        
+                
+        self.file.close() #Close Simulation File
+                   
 def main():
     return NetworkTrafficManager() >> flood()
         
