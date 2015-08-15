@@ -87,25 +87,7 @@ class NetworkTrafficManager (DynamicPolicy):
              
         self.endTime = time.time() #Register End Time of the function
         self.elapsedTimeUpdatePolicy = self.endTime - self.startTime #Calculate elapsed time of the function
-        
-
-    #Save Elapsed Times into Results.txt
-    def saveTimes(self):
-        self.file.write(str(self.simulationId))
-        self.file.write(';') 
-        self.file.write(self.currentState)
-        self.file.write(';')
-        self.file.write(str(self.elapsedTimeInit))
-        self.file.write(';')
-        self.file.write(str(self.elapsedTimeSetState))
-        self.file.write(';')
-        self.file.write(str(self.elapsedTimeUpdatePolicy))
-        self.file.write('\n')
-        
-        print "Init Time: ", self.elapsedTimeInit, "\n"
-        print "Set State Time: ", self.elapsedTimeSetState, "\n"
-        print "Update Policy Time: ", self.elapsedTimeUpdatePolicy, "\n"
-        
+                
     #Initialize Network
     def NTM_ui(self):
         
@@ -115,12 +97,7 @@ class NetworkTrafficManager (DynamicPolicy):
             print '\n'
             print hamraConfig.emergencyStatesNames.items()
             print '\n'
-            
-            # Simulation File Initialization
-            self.file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
-            self.file.write('HAMRA Simulation 1.5\n')
-            self.file.write('Simulation_Id;State;Init_Time;SetState_Time;Update_Time\n')
-                            
+                                     
             command = raw_input('Type the first letter of your option, or (q) to Quit Hamra:\n\n')
 
             if  hamraConfig.emergencyStates.has_key(command):
@@ -131,9 +108,27 @@ class NetworkTrafficManager (DynamicPolicy):
                 return          
             else:
                 print "Invalid Option. Try Again. \n"
+                
+            #Save Elapsed Times into Results.txt
+            self.file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
+            self.file.write('HAMRA Simulation 1.5\n')
+            self.file.write('Simulation_Id;State;Init_Time;SetState_Time;Update_Time\n')
+            self.file.write(str(self.simulationId))
+            self.file.write(';') 
+            self.file.write(self.currentState)
+            self.file.write(';')
+            self.file.write(str(self.elapsedTimeInit))
+            self.file.write(';')
+            self.file.write(str(self.elapsedTimeSetState))
+            self.file.write(';')
+            self.file.write(str(self.elapsedTimeUpdatePolicy))
+            self.file.write('\n')
+            self.file.close() 
             
-            self.saveTimes() #Save Elapsed Times into Results File - Simulation
-            self.file.close()
+            print "Init Time: ", self.elapsedTimeInit, "\n"
+            print "Set State Time: ", self.elapsedTimeSetState, "\n"
+            print "Update Policy Time: ", self.elapsedTimeUpdatePolicy, "\n"
+
         
 def main():
     return NetworkTrafficManager() >> flood()
