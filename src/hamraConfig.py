@@ -22,9 +22,9 @@ host4 = '10.0.0.4'
 flow1 = host1 + "," + host2 #Devices separeted by comma in flow definition
 flow2 = host2 + "," + host1 #Devices separeted by comma in flow definition
 flow3 = host2 + "," + host3 #Devices separeted by comma in flow definition
-flow4 = host3 + "," + host2
+flow4 = host3 + "," + host2 #Devices separeted by comma in flow definition
 flow5 = host3 + "," + host4 #Devices separeted by comma in flow definition
-flow6 = host4 + "," + host3
+flow6 = host4 + "," + host3 #Devices separeted by comma in flow definition
 
 # Emergency State Flows
 idle = [flow1,flow2]
