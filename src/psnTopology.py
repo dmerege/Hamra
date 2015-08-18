@@ -13,14 +13,14 @@ class PSNTopo(Topo):
         super(PSNTopo, self).__init__()
         
         # Adding Switches and Hosts
-        self.addSwitch('s1', mac='00:00:00:00:00:01')
-        self.addSwitch('s2', mac='00:00:00:00:00:02')
-        self.addSwitch('s3', mac='00:00:00:00:00:03')
-        self.addSwitch('s4', mac='00:00:00:00:00:04')
+        self.addSwitch('s1')
+        self.addSwitch('s2')
+        self.addSwitch('s3')
+        self.addSwitch('s4')
         self.addHost('h1', ip='10.0.0.1')
-        self.addHost('h2', ip='10.0.0.2')
-        self.addHost('h3', ip='10.0.0.3')
-        self.addHost('h4', ip='10.0.0.4')
+        self.addHost('h2', ip='20.0.0.1')
+        self.addHost('h3', ip='30.0.0.1')
+        self.addHost('h4', ip='40.0.0.1')
         
       
         # Adding links between swicthes and hosts
@@ -28,8 +28,8 @@ class PSNTopo(Topo):
         self.addLink ('s2', 's3')
         self.addLink ('s3', 's4')
         self.addLink ('s1', 'h1')
-        self.addLink ('s1', 'h2')
-        #self.addLink ('s2', 'h2')
+        #self.addLink ('s1', 'h2')
+        self.addLink ('s2', 'h2')
         self.addLink ('s3', 'h3')
         self.addLink ('s4', 'h4')
        

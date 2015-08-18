@@ -4,18 +4,18 @@
 
 # Network Devices (IP Addresses)
 host1 = '10.0.0.1'
-host2 = '10.0.0.2' 
-host3 = '10.0.0.3' 
-host4 = '10.0.0.4' 
+host2 = '20.0.0.1' 
+host3 = '30.0.0.1' 
+host4 = '40.0.0.1' 
     
-# Clusters (Switches MAC Addresses)
-cluster1 = '00:00:00:00:00:01' 
-cluster2 = '00:00:00:00:00:02' 
-cluster3 = '00:00:00:00:00:03' 
-cluster4 = '00:00:00:00:00:04' 
+# Clusters (Switches IDs)
+cluster1 = '10.0.0.0/24'
+cluster2 = '20.0.0.0/24'
+cluster3 = '30.0.0.0/24'
+cluster4 = '40.0.0.0/24'
     
 # DataFlow
-flow1 = cluster1 + "," + cluster2 #Devices separeted by comma in flow definition
+flow1 = cluster1 + "," + cluster2 #Devices separeted by comma in flow definition (SourceNetwork,DestinationNetwork)
 flow2 = cluster2 + "," + cluster1 #Devices separeted by comma in flow definition
 flow3 = cluster2 + "," + cluster3 #Devices separeted by comma in flow definition
 flow4 = cluster3 + "," + cluster2 #Devices separeted by comma in flow definition

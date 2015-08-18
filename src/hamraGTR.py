@@ -80,8 +80,7 @@ class NetworkTrafficManager (DynamicPolicy):
         
         self.startTime = time.time() #Register Start Time of the function
         
-        #self.policy =  union ([match(srcip=source) & match(dstip=destination) 
-        self.policy =  union ([match(srcmac=source) & match(dstmac=destination) 
+        self.policy =  union ([match(srcip=source) & match(dstip=destination) 
                               for (source,destination) 
                               in self.activeFlows.keys()])
 
