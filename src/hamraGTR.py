@@ -60,8 +60,7 @@ class NetworkTrafficManager (DynamicPolicy):
         
         for flow in self.stateInCharge: 
             (str1,str2) = flow.split(',')
-            #(source,destination) = (IP(str1),IP(str2))
-            (source,destination) = (MAC(str1),MAC(str2))
+            (source,destination) = (IP(str1),IP(str2))
             self.activeFlows [(source, destination)] = True #Flow from sourceIP to DestinationIP is active
             
         self.UpdatePolicy ()
