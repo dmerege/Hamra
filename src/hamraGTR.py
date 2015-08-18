@@ -1,5 +1,5 @@
 # HAMRA - Network Traffic Manager
-# Version 1.5
+# Version 1.6
 # Developed By Daniel Merege - 2015
 
 # Importation of Pyretic Classes
@@ -35,7 +35,7 @@ class NetworkTrafficManager (DynamicPolicy):
                     
         print "\n"
         print "Initializing HAMRA Network Traffic Manager" 
-        print "Welcome to HAMRA Network Traffic Management - Version 1.5"
+        print "Welcome to HAMRA Network Traffic Management - Version 1.6"
         print "Developed by Daniel Merege - 2015"
         print "\n"
         
@@ -60,7 +60,8 @@ class NetworkTrafficManager (DynamicPolicy):
         
         for flow in self.stateInCharge: 
             (str1,str2) = flow.split(',')
-            (source,destination) = (IP(str1),IP(str2))
+            #(source,destination) = (IP(str1),IP(str2))
+            (source,destination) = (MAC(str1),MAC(str2))
             self.activeFlows [(source, destination)] = True #Flow from sourceIP to DestinationIP is active
             
         self.UpdatePolicy ()
@@ -79,7 +80,8 @@ class NetworkTrafficManager (DynamicPolicy):
         
         self.startTime = time.time() #Register Start Time of the function
         
-        self.policy =  union ([match(srcip=source) & match(dstip=destination) 
+        #self.policy =  union ([match(srcip=source) & match(dstip=destination) 
+        self.policy =  union ([match(srcmac=source) & match(dstmac=destination) 
                               for (source,destination) 
                               in self.activeFlows.keys()])
 
@@ -111,7 +113,7 @@ class NetworkTrafficManager (DynamicPolicy):
         
         #Save Elapsed Times into Results.txt
         self.file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
-        self.file.write('HAMRA Simulation 1.5\n')
+        self.file.write('HAMRA Simulation 1.6\n')
         self.file.write('Simulation_Id;State;Init_Time;SetState_Time;Update_Time\n')
        
         #Ask the Network Configuration

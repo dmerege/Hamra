@@ -13,10 +13,10 @@ class PSNTopo(Topo):
         super(PSNTopo, self).__init__()
         
         # Adding Switches and Hosts
-        self.addSwitch('s1')
-        self.addSwitch('s2')
-        self.addSwitch('s3')
-        self.addSwitch('s4')
+        self.addSwitch('s1', mac='00:00:00:00:00:01')
+        self.addSwitch('s2', mac='00:00:00:00:00:02')
+        self.addSwitch('s3', mac='00:00:00:00:00:03')
+        self.addSwitch('s4', mac='00:00:00:00:00:04')
         self.addHost('h1', ip='10.0.0.1')
         self.addHost('h2', ip='10.0.0.2')
         self.addHost('h3', ip='10.0.0.3')
