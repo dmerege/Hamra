@@ -4,7 +4,8 @@
 # PSN Topology for Mininet
 
 from mininet.topo import Topo
-from mininet.node import OVSSwitch, Controller, RemoteController
+from mininet.net import Mininet
+from mininet.node import Host, OVSSwitch, Controller, RemoteController
 
 class psnTopology(Topo):
     
@@ -16,19 +17,19 @@ class psnTopology(Topo):
 
         h1 = self.addHost("h1",
                           ip="172.31.1.100/24",
-                          defaultRoute="gw 172.31.1.1")
+                          defaultRoute="default")
 
         h2 = self.addHost("h2",
                           ip="172.31.2.100/24",
-                          defaultRoute="gw 172.31.2.1")
+                          defaultRoute="default")
 
         h3 = self.addHost("h3",
                           ip="172.31.3.100/24",
-                          defaultRoute="gw 172.31.3.1")
+                          defaultRoute="default")
 
         h4 = self.addHost("h4",
                           ip="172.31.4.100/24",
-                          defaultRoute="gw 172.31.4.1")
+                          defaultRoute="default")
 
        
         s1 = self.addSwitch("s1")
@@ -45,9 +46,8 @@ class psnTopology(Topo):
         self.addLink(h2, s2)
         self.addLink(h3, s3)
         self.addLink(h4,s4)
-
+        
+              
  
-
-
 topos = {'psn':(lambda: psnTopology())}
         
