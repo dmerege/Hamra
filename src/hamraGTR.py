@@ -1,5 +1,5 @@
 # HAMRA - Network Traffic Manager
-# Version 1.6
+# Version 1.7
 # Developed By Daniel Merege - 2015
 
 # Importation of Pyretic Classes
@@ -80,11 +80,9 @@ class NetworkTrafficManager (DynamicPolicy):
         
         self.startTime = time.time() #Register Start Time of the function
         
-        #self.policy =  union ([match(srcip=source) & match(dstip=destination) 
-        self.policy =  ((match(srcip='10.0.0.0/24') & match(dstip='20.0.0.0/24')) +
-                             (match(srcip='20.0.0.0/24') & match(dstip='10.0.0.0/24'))) 
-        #                      for (source,destination) 
-        #                      in self.activeFlows.keys()])
+        self.policy =  union ([match(srcip=source) & match(dstip=destination) 
+                              for (source,destination) 
+                              in self.activeFlows.keys()])
 
         print self.policy
              
@@ -114,7 +112,7 @@ class NetworkTrafficManager (DynamicPolicy):
         
         #Save Elapsed Times into Results.txt
         self.file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
-        self.file.write('HAMRA Simulation 1.6\n')
+        self.file.write('HAMRA Simulation 1.7\n')
         self.file.write('Simulation_Id;State;Init_Time;SetState_Time;Update_Time\n')
        
         #Ask the Network Configuration

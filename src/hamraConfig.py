@@ -3,16 +3,16 @@
 #--------------------- BEGIN - HAMRA Configuration Area ------------------------
 
 # Network Devices (IP Addresses)
-host1 = '10.0.0.1'
-host2 = '20.0.0.1' 
-host3 = '30.0.0.1' 
-host4 = '40.0.0.1' 
+host1 = '172.31.1.100'
+host2 = '172.31.2.100'
+host3 = '172.31.3.100' 
+host4 = '172.31.4.100' 
     
-# Clusters (Switches IDs)
-cluster1 = '10.0.0.0/24'
-cluster2 = '20.0.0.0/24'
-cluster3 = '30.0.0.0/24'
-cluster4 = '40.0.0.0/24'
+# Clusters (Subnet Range IPs)
+cluster1 = '172.31.1.0/24'
+cluster2 = '172.31.2.0/24'
+cluster3 = '172.31.3.0/24'
+cluster4 = '172.31.4.0/24'
     
 # DataFlow
 flow1 = cluster1 + "," + cluster2 #Devices separeted by comma in flow definition (SourceNetwork,DestinationNetwork)
