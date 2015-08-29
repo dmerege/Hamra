@@ -24,9 +24,9 @@ flow1 = cluster1 + "," + cluster2 #Devices separeted by comma in flow definition
 
 # Emergency State Flows
 idle = [flow1]
-#preparedness = [flow1, flow2, flow3, flow4]
-#warning = [flow1, flow2, flow3, flow4, flow5, flow6]
-#crisis = [flow3, flow4] 
+preparedness = []
+warning = []
+crisis = [] 
 
 # Emergency States
 emergencyStatesNames = {'i':'Idle', 'p':'Preparedness','w':'Warning','c':'Crisis'}
