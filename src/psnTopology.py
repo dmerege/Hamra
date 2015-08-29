@@ -23,29 +23,34 @@ class psnTopology(Topo):
                           ip="172.31.2.100/24",
                           defaultRoute="default")
 
-        h3 = self.addHost("h3",
-                          ip="172.31.3.100/24",
-                          defaultRoute="default")
+        #h3 = self.addHost("h3",
+        #                  ip="172.31.3.100/24",
+        #                  defaultRoute="default")
 
-        h4 = self.addHost("h4",
-                          ip="172.31.4.100/24",
-                          defaultRoute="default")
+        #h4 = self.addHost("h4",
+        #                  ip="172.31.4.100/24",
+        #                  defaultRoute="default")
 
        
         s1 = self.addSwitch("s1")
         s2 = self.addSwitch("s2")
         s3 = self.addSwitch("s3")
         s4 = self.addSwitch("s4")
+        s5 = self.addSwitch("s5")
+        s6 = self.addSwitch("s6")
+        
         
         
         self.addLink(s1, s2)
         self.addLink(s2, s3)
         self.addLink(s3, s4)
+        self.addLink(s4, s5)
+        self.addLink(s5, s6)
                 
         self.addLink(h1, s1)
         self.addLink(h2, s2)
-        self.addLink(h3, s3)
-        self.addLink(h4,s4)
+        #self.addLink(h3, s5)
+        #self.addLink(h4,s6)
         
               
  
