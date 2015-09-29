@@ -1,6 +1,6 @@
 # HAMRA - Network Traffic Manager
-# Version 1.9
-# New on this version: The function time.clock() has been changed to time.process_time(), in order to meausure the time more accurate.
+# Version 1.10
+# New on this version: The function time.process_time() has been changed to time.clock(), in order to meausure the time more accurate.
 # Developed By Daniel Merege - 2015
 
 # Importation of Pyretic Classes
@@ -26,7 +26,7 @@ class NetworkTrafficManager (DynamicPolicy):
     def __init__(self): 
         """ Method for initialization of the HAMRA's NTM """
         
-        self.startTime = time.process_time() #Register Start Time of the function
+        self.startTime = time.clock() #Register Start Time of the function
         
         # Global Variables
         self.elapsedTimeInit = 0
@@ -36,7 +36,7 @@ class NetworkTrafficManager (DynamicPolicy):
                     
         print "\n"
         print "Initializing HAMRA Network Traffic Manager" 
-        print "Welcome to HAMRA Network Traffic Management - Version 1.9"
+        print "Welcome to HAMRA Network Traffic Management - Version 1.10"
         print "Developed by Daniel Merege - 2015"
         print "\n"
         
@@ -47,14 +47,14 @@ class NetworkTrafficManager (DynamicPolicy):
         self.ui.daemon = True
         self.ui.start()
         
-        self.endTime = time.process_time() #Register End Time of the function
+        self.endTime = time.clock() #Register End Time of the function
         self.elapsedTimeInit = self.endTime - self.startTime #Calculate elapsed time of the function
 
         
     def setState (self, state):
         """ Method for network configuration when the emergency's state is Idle """
         
-        self.startTime = time.process_time() #Register Start Time of the function
+        self.startTime = time.clock() #Register Start Time of the function
         
         self.activeFlows = {} #Erase every flow in ActiveFlows dictionary
         self.stateInCharge = hamraConfig.emergencyStates.get(state)
@@ -72,14 +72,14 @@ class NetworkTrafficManager (DynamicPolicy):
         print self.currentState
         print '\n'      
            
-        self.endTime = time.process_time()  #Register End Time of the function
+        self.endTime = time.clock()  #Register End Time of the function
         self.elapsedTimeSetState = self.endTime - self.startTime #Calculate elapsed time of the function
         
        
     def UpdatePolicy (self):
         """ Method for renew the traffic policy in the network """
         
-        self.startTime = time.process_time() #Register Start Time of the function
+        self.startTime = time.clock() #Register Start Time of the function
         
         self.policy =  union ([match(srcip=source) & match(dstip=destination) 
                               for (source,destination) 
@@ -87,7 +87,7 @@ class NetworkTrafficManager (DynamicPolicy):
 
         print self.policy
              
-        self.endTime = time.process_time() #Register End Time of the function
+        self.endTime = time.clock() #Register End Time of the function
         self.elapsedTimeUpdatePolicy = self.endTime - self.startTime #Calculate elapsed time of the function
         
     
@@ -113,7 +113,7 @@ class NetworkTrafficManager (DynamicPolicy):
         
         #Save Elapsed Times into Results.txt
         self.file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
-        self.file.write('HAMRA Simulation 1.9\n')
+        self.file.write('HAMRA Simulation 1.10\n')
         self.file.write('Simulation_Id;State;Init_Time;SetState_Time;Update_Time\n')
        
         #Ask the Network Configuration
