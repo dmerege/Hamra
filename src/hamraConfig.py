@@ -23,14 +23,15 @@ flow5 = cluster3 + "," + cluster4 #Devices separeted by comma in flow definition
 flow6 = cluster4 + "," + cluster3 #Devices separeted by comma in flow definition
 
 # Emergency State Flows
+oneRule = [flow1]
 idle = [flow1,flow2]
 preparedness = [flow1,flow2,flow3,flow4]
 warning = [flow1,flow2,flow3,flow4, flow5]
 crisis = [flow1,flow2,flow3,flow4, flow5, flow6] 
 
 # Emergency States
-emergencyStatesNames = {'i':'Idle', 'p':'Preparedness','w':'Warning','c':'Crisis'}
-emergencyStates = {'i':idle, 'p':preparedness, 'w':warning, 'c':crisis}
+emergencyStatesNames = {'o':'One Rule','i':'Idle', 'p':'Preparedness','w':'Warning','c':'Crisis'}
+emergencyStates = {'o':oneRule, 'i':idle, 'p':preparedness, 'w':warning, 'c':crisis}
 
 #--------------------- END - HAMRA Configuration Area --------------------------
     
