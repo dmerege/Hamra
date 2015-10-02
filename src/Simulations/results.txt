@@ -1,7 +1,7 @@
 HAMRA Simulation 1.11.1
 Simulation_Id;State;Init_Time;SetState_Time;Update_Time
-1;One Rule;0.0;0.0;0.53
-2;Idle;0.0;0.0;1.06
-3;Preparedness;0.0;0.0;3.14
-4;Warning;0.0;0.0;4.69
-5;Crisis;0.0;0.0;6.75
+1;One Rule;0.01;0.0;0.47
+2;Idle;0.01;0.0;1.0
+3;Preparedness;0.01;0.0;2.91
+4;Warning;0.01;0.0;4.35
+5;Crisis;0.01;0.0;6.26
