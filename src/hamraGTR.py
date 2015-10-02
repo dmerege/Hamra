@@ -1,6 +1,5 @@
 # HAMRA - Network Traffic Manager
-# Version 1.10
-# New on this version: The function time.process_time() has been changed to time.clock(), in order to meausure the time more accurate.
+# Version 1.11
 # Developed By Daniel Merege - 2015
 
 # Importation of Pyretic Classes
@@ -36,7 +35,7 @@ class NetworkTrafficManager (DynamicPolicy):
                     
         print "\n"
         print "Initializing HAMRA Network Traffic Manager" 
-        print "Welcome to HAMRA Network Traffic Management - Version 1.10"
+        print "Welcome to HAMRA Network Traffic Management - Version 1.11"
         print "Developed by Daniel Merege - 2015"
         print "\n"
         
@@ -52,8 +51,8 @@ class NetworkTrafficManager (DynamicPolicy):
 
         
     def setState (self, state):
-        """ Method for network configuration when the emergency's state is Idle """
-        
+       
+           
         self.startTime = time.clock() #Register Start Time of the function
         
         self.activeFlows = {} #Erase every flow in ActiveFlows dictionary
@@ -65,17 +64,11 @@ class NetworkTrafficManager (DynamicPolicy):
             (source,destination) = (str1,str2)
             self.activeFlows [(source, destination)] = True #Flow from sourceIP to DestinationIP is active
             
-        self.UpdatePolicy ()
         
-        self.currentState = hamraConfig.emergencyStatesNames.get(state)
-        print '**Current State**\n'
-        print self.currentState
-        print '\n'      
-           
         self.endTime = time.clock()  #Register End Time of the function
         self.elapsedTimeSetState = self.endTime - self.startTime #Calculate elapsed time of the function
-        
-       
+            
+   
     def UpdatePolicy (self):
         """ Method for renew the traffic policy in the network """
         
@@ -113,7 +106,7 @@ class NetworkTrafficManager (DynamicPolicy):
         
         #Save Elapsed Times into Results.txt
         self.file = open('/home/mininet/Hamra/src/Simulations/results.txt','w')
-        self.file.write('HAMRA Simulation 1.10\n')
+        self.file.write('HAMRA Simulation 1.11\n')
         self.file.write('Simulation_Id;State;Init_Time;SetState_Time;Update_Time\n')
        
         #Ask the Network Configuration
@@ -127,7 +120,13 @@ class NetworkTrafficManager (DynamicPolicy):
 
             if  hamraConfig.emergencyStates.has_key(command):
                 self.setState(command)
+                self.UpdatePolicy ()
                 self.saveSimulation()
+                
+                self.currentState = hamraConfig.emergencyStatesNames.get(state)
+                print '**Current State**\n'
+                print self.currentState
+                print '\n' 
             elif command == 'q':
                 print "Quitting HAMRA"
                 os.kill(os.getpid(), signal.SIGINT)
