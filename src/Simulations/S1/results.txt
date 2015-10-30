@@ -1,0 +1,27 @@
+HAMRA Simulation 1.11.1
+Simulation_Id;State;Init_Time;SetState_Time;Update_Time
+1;One Rule;0.0;0.0;0.0
+2;Idle;0.0;0.0;0.01
+3;Preparedness;0.0;0.0;0.02
+4;Warning;0.0;0.0;0.02
+5;Crisis;0.0;0.0;0.02
+6;One Rule;0.0;0.0;0.01
+7;Idle;0.0;0.0;0.03
+8;Preparedness;0.0;0.0;0.09
+9;Warning;0.0;0.0;0.12
+10;Crisis;0.0;0.0;0.18
+11;One Rule;0.0;0.0;0.08
+12;Idle;0.0;0.0;0.17
+13;Preparedness;0.0;0.0;0.54
+14;Warning;0.0;0.0;0.82
+15;Crisis;0.0;0.0;1.18
+16;One Rule;0.0;0.0;0.34
+17;Idle;0.0;0.0;0.74
+18;Preparedness;0.0;0.0;2.14
+19;Warning;0.0;0.0;3.22
+20;Crisis;0.0;0.0;4.77
+21;One Rule;0.0;0.0;0.39
+22;Idle;0.0;0.0;0.8
+23;Preparedness;0.0;0.0;2.36
+24;Warning;0.0;0.0;3.46
+25;Crisis;0.0;0.0;5.05
