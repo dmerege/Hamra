@@ -84,7 +84,10 @@ class NetworkTrafficManager (DynamicPolicy):
         self.msg = of.ofp_flow_mod()
         self.msg.match = of.ofp_match(nw_src = "172.31.1.0/24", nw_dst = "172.31.2.0/24")
         self.msg.actions.append(of.ofp_action_output(port=1))
-        self.connection.send(self.msg)
+        
+        for connection in core.openflow.connections: # _connections.values() before betta
+            connection.send(self.msg)
+        
              
         self.endTime = time.clock() #Register End Time of the function
         self.elapsedTimeUpdatePolicy = self.endTime - self.startTime #Calculate elapsed time of the function
