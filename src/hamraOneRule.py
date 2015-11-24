@@ -8,6 +8,11 @@ from pox.core import core
 import pox.openflow.libopenflow_01 as of
 from pox.lib.util import dpidToStr
 
+# Importation of Pyretic Classes
+
+from pyretic.lib.corelib import *
+from pyretic.lib.std import *
+
 #Import Hamra Configuration File
 import hamraConfig 
 
