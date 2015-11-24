@@ -40,8 +40,8 @@ class NetworkTrafficManager (DynamicPolicy):
         self.simulationId = 1
                     
         print "\n"
-        print "Initializing HAMRA Network Traffic Manager" 
-        print "Welcome to HAMRA Network Traffic Management - Version 1.11.1"
+        print "Initializing HAMRA ONE RULE" 
+        print "Welcome to HAMRA ONE RULE - Version 1.0"
         print "Developed by Daniel Merege - 2015"
         print "\n"
         
@@ -84,7 +84,7 @@ class NetworkTrafficManager (DynamicPolicy):
         self.msg = of.ofp_flow_mod()
         self.msg.match = of.ofp_match(nw_src = "172.31.1.0/24", nw_dst = "172.31.2.0/24")
         self.msg.actions.append(of.ofp_action_output(port=1))
-        event.connection.send(self.msg)
+        self.connection.send(self.msg)
              
         self.endTime = time.clock() #Register End Time of the function
         self.elapsedTimeUpdatePolicy = self.endTime - self.startTime #Calculate elapsed time of the function
