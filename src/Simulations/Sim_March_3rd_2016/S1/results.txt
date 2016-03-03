@@ -1,0 +1,77 @@
+HAMRA Simulation 1.11.1
+Simulation_Id;State;Init_Time;SetState_Time;Update_Time
+1;One Rule;0.0;0.0;0.0
+2;Idle;0.0;0.0;0.01
+3;Preparedness;0.0;0.0;0.02
+4;Warning;0.0;0.0;0.05
+5;Crisis;0.0;0.0;0.04
+6;One Rule;0.0;0.0;0.0
+7;Idle;0.0;0.0;0.01
+8;Preparedness;0.0;0.0;0.02
+9;Warning;0.0;0.0;0.02
+10;Crisis;0.0;0.0;0.03
+11;One Rule;0.0;0.0;0.0
+12;Idle;0.0;0.0;0.01
+13;Preparedness;0.0;0.0;0.01
+14;Warning;0.0;0.0;0.02
+15;Crisis;0.0;0.0;0.04
+16;One Rule;0.0;0.0;0.01
+17;Idle;0.0;0.0;0.0
+18;Preparedness;0.0;0.0;0.02
+19;Warning;0.0;0.0;0.04
+20;Crisis;0.0;0.0;0.04
+21;One Rule;0.0;0.0;0.0
+22;Idle;0.0;0.0;0.01
+23;Preparedness;0.0;0.0;0.01
+24;Warning;0.0;0.0;0.03
+25;Crisis;0.0;0.0;0.03
+26;One Rule;0.0;0.0;0.0
+27;Idle;0.0;0.0;0.01
+28;Preparedness;0.0;0.0;0.02
+29;Warning;0.0;0.0;0.03
+30;Crisis;0.0;0.0;0.03
+31;One Rule;0.0;0.0;0.0
+32;Idle;0.0;0.0;0.02
+33;Preparedness;0.0;0.0;0.01
+34;Warning;0.0;0.0;0.04
+35;Crisis;0.0;0.0;0.04
+36;One Rule;0.0;0.0;0.0
+37;Idle;0.0;0.0;0.0
+38;Preparedness;0.0;0.0;0.02
+39;Warning;0.0;0.0;0.03
+40;Crisis;0.0;0.0;0.04
+41;One Rule;0.0;0.0;0.0
+42;Idle;0.0;0.0;0.0
+43;Preparedness;0.0;0.0;0.01
+44;Warning;0.0;0.0;0.04
+45;Crisis;0.0;0.0;0.03
+46;One Rule;0.0;0.0;0.0
+47;Idle;0.0;0.0;0.0
+48;Preparedness;0.0;0.0;0.01
+49;Warning;0.0;0.0;0.03
+50;Crisis;0.0;0.0;0.04
+51;One Rule;0.0;0.0;0.01
+52;Idle;0.0;0.0;0.0
+53;Preparedness;0.0;0.0;0.02
+54;Warning;0.0;0.0;0.02
+55;Crisis;0.0;0.0;0.03
+56;One Rule;0.0;0.0;0.0
+57;Idle;0.0;0.0;0.01
+58;Preparedness;0.0;0.0;0.03
+59;Warning;0.0;0.0;0.02
+60;Crisis;0.0;0.0;0.04
+61;One Rule;0.0;0.0;0.0
+62;Idle;0.0;0.0;0.01
+63;Preparedness;0.0;0.0;0.03
+64;Warning;0.0;0.0;0.02
+65;Crisis;0.0;0.0;0.05
+66;One Rule;0.0;0.0;0.0
+67;Idle;0.0;0.0;0.0
+68;Preparedness;0.0;0.0;0.01
+69;Warning;0.0;0.0;0.03
+70;Crisis;0.0;0.0;0.03
+71;One Rule;0.0;0.0;0.01
+72;Idle;0.0;0.0;0.0
+73;Preparedness;0.0;0.0;0.01
+74;Warning;0.0;0.0;0.03
+75;Crisis;0.0;0.0;0.03
